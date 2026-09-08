@@ -1,0 +1,14 @@
+.app-sidebar {
+    width: 250px;
+    height: 100vh;
+    min-height: 100vh;
+    background: var(--bhr-surface);
+    border-right: 1px solid var(--bhr-border);
+    padding: 1.4rem 1rem;
+    position: sticky;
+    top: 0;
+    flex: 0 0 auto;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }

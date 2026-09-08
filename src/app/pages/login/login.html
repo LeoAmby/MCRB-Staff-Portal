@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MCRB Staff | Login</title>
+
+  <!-- Bootstrap 5 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+  <main class="auth-wrap">
+    <div class="container-fluid">
+      <div class="row min-vh-100">
+
+        <!-- =========================
+             LEFT SIDE - INFORMATION
+             ========================= -->
+        <div class="col-lg-6 auth-aside d-none d-lg-flex flex-column">
+
+          <!-- Logo -->
+          <a href="#" class="brand">
+            <span class="brand__mark">MCRB</span>
+            <span>Staff Portal</span>
+          </a>
+
+          <!-- Main Content -->
+          <div class="my-auto position-relative" style="z-index: 1;">
+
+            <p class="eyebrow text-white-50 mb-3">
+              Employee Management System
+            </p>
+
+            <h1 class="auth-aside__headline mb-4">
+              Manage your people with clarity and confidence.
+            </h1>
+
+            <ul class="auth-aside__list">
+
+              <li>
+                <span class="auth-aside__tick">✓</span>
+                <span>
+                  Manage employee information in one central place.
+                </span>
+              </li>
+
+              <li>
+                <span class="auth-aside__tick">✓</span>
+                <span>
+                  Track employee records and important HR activities.
+                </span>
+              </li>
+
+              <li>
+                <span class="auth-aside__tick">✓</span>
+                <span>
+                  Access the information you need securely and efficiently.
+                </span>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <!-- Footer -->
+          <div class="position-relative small text-white-50" style="z-index: 1;">
+            © 2026 MCRB Staff. All rights reserved.
+          </div>
+
+        </div>
+
+
+        <!-- =========================
+             RIGHT SIDE - LOGIN FORM
+             ========================= -->
+        <div class="col-lg-6 auth-panel">
+
+          <div class="auth-card">
+
+            <!-- Mobile Brand -->
+            <a href="#" class="brand d-lg-none mb-5">
+              <span class="brand__mark">MCRB</span>
+              <span>STAFF PORTAL</span>
+            </a>
+
+            <!-- Heading -->
+            <div class="mb-4">
+              <p class="eyebrow mb-2">
+                Welcome back
+              </p>
+
+              <h2 class="section-title mb-2">
+                Sign in to your account
+              </h2>
+
+              <p class="text-muted-soft mb-0">
+                Enter your details below to access the Employee Management System.
+              </p>
+            </div>
+
+
+            <!-- =========================
+                 LOGIN FORM
+                 ========================= -->
+            <form class="login-form" novalidate>
+
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="username" class="form-label">
+                  Username
+                </label>
+
+                <input 
+                  type="text"
+                  class="form-control"
+                  id="username" name="userName" [(ngModel)]="loginObj.userName"
+                  placeholder="you@example.com"
+                  required
+                >
+              </div>
+
+
+              <!-- Password -->
+              <div class="mb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <label for="password" class="form-label">
+                    Password
+                  </label>
+
+                  <a href="#" class="link-bhr small">
+                    Forgot password?
+                  </a>
+                </div>
+
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password" name="password" [(ngModel)]="loginObj.password"
+                  placeholder="Enter your password"
+                  required
+                >
+              </div>
+
+
+              <!-- Remember Me -->
+              <div class="form-check mb-4">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="remember"
+                >
+
+                <label
+                  class="form-check-label text-muted-soft small"
+                  for="remember"
+                >
+                  Remember me
+                </label>
+              </div>
+
+
+              <!-- Sign In Button -->
+              <button type="submit" class="btn btn-bhr w-100" (click)="onLogin()">
+                Sign in
+              </button>
+
+            </form>
+
+
+            <!-- Optional Divider -->
+            <div class="auth-divider">
+              OR
+            </div>
+
+
+            <!-- Optional Alternative Button -->
+            <button
+              type="button"
+              class="btn btn-bhr-ghost w-100"
+            >
+              Sign in with Single Sign-On
+            </button>
+
+
+            <!-- Footer -->
+            <p class="text-center text-muted-soft small mt-4 mb-0">
+              Having trouble accessing your account?
+              <a href="#" class="link-bhr">
+                Contact support
+              </a>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
