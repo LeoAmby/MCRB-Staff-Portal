@@ -183,7 +183,7 @@
                   font-size: .8rem;
                 "
               >
-                LM
+              {{ loggedInUser?.name?.charAt(0) }}
               </span>
     
     
@@ -194,14 +194,14 @@
                   class="d-block fw-semibold"
                   style="font-size: .85rem;"
                 >
-                  Leo M.
+                  {{loggedInUser?.name}}
                 </span>
     
                 <span
                   class="d-block text-muted-soft"
                   style="font-size: .72rem;"
                 >
-                  HR Administrator
+                 {{loggedInUser?.role}}
                 </span>
     
               </span>
