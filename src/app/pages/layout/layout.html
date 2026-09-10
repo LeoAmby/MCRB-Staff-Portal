@@ -1,573 +1,165 @@
-<div class="d-flex">
+<div class="d-flex" [class.sidebar-collapsed]="sidebarCollapsed">
 
-    <!-- ============================================
-         SIDEBAR
-         ============================================ -->
-  
-    <aside class="app-sidebar">
+  <!-- SIDEBAR -->
+  <aside class="app-sidebar">
 
-  <!-- Brand -->
-  <div class="d-flex align-items-center justify-content-between mb-4 px-2">
-    <a href="#" class="brand">
-      <span class="brand__mark">MCRB</span>
-      <span>Staff Portal</span>
-    </a>
-  </div>
-  
-  <!-- Navigation -->
-  <nav class="nav-side">
-  
-    <div class="nav-side__label">
-      Main
-    </div>
-  
-    <a href="#" class="nav-side__link active">
-      <span>⌂</span>
-      <span>Dashboard</span>
-    </a>
-  
-    <a href="#" class="nav-side__link">
-      <span>♙</span>
-      <span>Employees</span>
-    </a>
-  
-    <a href="#" class="nav-side__link">
-      <span>▣</span>
-      <span>Departments</span>
-    </a>
-  
-    <a href="#" class="nav-side__link">
-      <span>▤</span>
-      <span>Leave Management</span>
-    </a>
-  
-  
-    <div class="nav-side__label">
-      Management
-    </div>
-  
-    <a href="#" class="nav-side__link">
-      <span>◉</span>
-      <span>Attendance</span>
-    </a>
-  
-    <a href="#" class="nav-side__link">
-      <span>▥</span>
-      <span>Reports</span>
-    </a>
-  
-    <a href="#" class="nav-side__link">
-      <span>⚙</span>
-      <span>Settings</span>
-    </a>
-  
-  </nav>
-  
-  
-  <!-- Sidebar Bottom -->
-  <div class="mt-auto pt-4">
-  
-    <div
-      class="p-3 rounded-3"
-      style="background: var(--bhr-primary-lt);"
-    >
-      <div class="small fw-semibold mb-1"
-           style="color: var(--bhr-primary-dk);">
-        Need help?
-      </div>
-  
-      <div class="small text-muted-soft mb-2">
-        Contact HR support for assistance.
-      </div>
-  
-      <a href="#" class="link-bhr small">
-        Get support →
+    <!-- Brand -->
+    <div class="d-flex align-items-center justify-content-between mb-4 px-2">
+
+      <a href="#" class="brand">
+        <span class="brand__mark">MCRB</span>
+        <span>Staff Portal</span>
       </a>
+
     </div>
-  
-  </div>
-  ```
-  
-    </aside>
-  
-    <!-- ============================================
-         MAIN APPLICATION
-         ============================================ -->
-  
-    <main class="app-main">
-  
-  ```
-  <!-- ============================================
-       TOP NAVBAR
-       ============================================ -->
-  <header class="app-topbar">
-  
-    <div class="d-flex align-items-center justify-content-between">
-  
-      <!-- Left side -->
-      <div class="d-flex align-items-center gap-3">
-  
-        <!-- Sidebar Toggle -->
-        <button
-          type="button"
-          class="btn btn-bhr-ghost p-2"
-          aria-label="Toggle sidebar"
-          title="Toggle sidebar"
-        >
-          ☰
-        </button>
-  
-        <div>
-          <h1 class="section-title">
-            Dashboard
-          </h1>
-  
-          <div class="small text-muted-soft d-none d-md-block">
-            Welcome back. Here's what's happening today.
-          </div>
-        </div>
-  
+
+
+    <!-- Navigation -->
+    <nav class="nav-side">
+
+      <div class="nav-side__label">
+        Main
       </div>
-  
-  
-      <!-- Right side: User -->
-      <div class="d-flex align-items-center gap-3">
-  
-        <!-- Notifications -->
-        <button
-          type="button"
-          class="btn btn-bhr-ghost p-2 d-none d-sm-inline-flex"
-          aria-label="Notifications"
+
+      <a
+        routerLink="/admin/dashboard"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"
+        class="nav-side__link"
+      >
+        <span>⌂</span>
+        <span>Dashboard</span>
+      </a>
+
+      <a
+        routerLink="/admin/employee-list"
+        routerLinkActive="active"
+        class="nav-side__link"
+      >
+        <span>♙</span>
+        <span>Employees</span>
+      </a>
+
+      <a href="#" class="nav-side__link">
+        <span>▣</span>
+        <span>Departments</span>
+      </a>
+
+      <a
+        routerLink="/admin/projects"
+        routerLinkActive="active"
+        class="nav-side__link"
+      >
+        <span>▤</span>
+        <span>Projects</span>
+      </a>
+
+
+      <div class="nav-side__label">
+        Management
+      </div>
+
+      <a href="#" class="nav-side__link">
+        <span>◉</span>
+        <span>Attendance</span>
+      </a>
+
+      <a href="#" class="nav-side__link">
+        <span>▥</span>
+        <span>Reports</span>
+      </a>
+
+      <a href="#" class="nav-side__link">
+        <span>⚙</span>
+        <span>Settings</span>
+      </a>
+
+    </nav>
+
+
+    <!-- Sidebar Bottom -->
+    <div class="mt-auto pt-4">
+
+      <div
+        class="p-3 rounded-3"
+        style="background: var(--bhr-primary-lt);"
+      >
+
+        <div
+          class="small fw-semibold mb-1"
+          style="color: var(--bhr-primary-dk);"
         >
-          ♢
-        </button>
-  
-  
-        <!-- User Profile -->
-        <div class="dropdown">
-  
+          Need help?
+        </div>
+
+        <div class="small text-muted-soft mb-2">
+          Contact HR support for assistance.
+        </div>
+
+        <a href="#" class="link-bhr small">
+          Get support →
+        </a>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+
+  <!-- MAIN APPLICATION -->
+  <main class="app-main">
+
+    <!-- TOP NAVBAR -->
+    <header class="app-topbar">
+
+      <div class="d-flex align-items-center justify-content-between">
+
+        <!-- LEFT -->
+        <div class="d-flex align-items-center gap-3">
+
+          <!-- SIDEBAR TOGGLE -->
           <button
             type="button"
-            class="btn btn-bhr-ghost d-flex align-items-center gap-2"
+            class="btn btn-bhr-ghost p-2"
+            aria-label="Toggle sidebar"
+            title="Toggle sidebar"
+            (click)="toggleSidebar()"
           >
-  
-            <!-- Avatar -->
-            <span
-              class="d-inline-flex align-items-center justify-content-center rounded-circle"
-              style="
-                width: 34px;
-                height: 34px;
-                background: var(--bhr-primary-lt);
-                color: var(--bhr-primary-dk);
-                font-weight: 700;
-                font-size: .8rem;
-              "
-            >
-              LM
-            </span>
-  
-            <!-- User Details -->
-            <span class="text-start d-none d-md-block">
-              <span
-                class="d-block fw-semibold"
-                style="font-size: .85rem;"
-              >
-                Leo M.
-              </span>
-  
-              <span
-                class="d-block text-muted-soft"
-                style="font-size: .72rem;"
-              >
-                HR Administrator
-              </span>
-            </span>
-  
-            <span class="small d-none d-md-inline">
-              ▾
-            </span>
-  
+            ☰
           </button>
-  
-  
-          <!-- User Menu -->
-          <div
-            class="dropdown-menu dropdown-menu-end border-0 mt-2 p-2"
-            style="
-              min-width: 220px;
-              border-radius: var(--bhr-radius);
-              box-shadow: var(--bhr-shadow);
-            "
-          >
-  
-            <div class="px-3 py-2 border-bottom mb-2"
-                 style="border-color: var(--bhr-border) !important;">
-  
-              <div class="fw-semibold">
-                Leo M.
-              </div>
-  
-              <div class="small text-muted-soft">
-                leo@example.com
-              </div>
-  
-            </div>
-  
-            <a href="#" class="dropdown-item rounded-2">
-              My Profile
-            </a>
-  
-            <a href="#" class="dropdown-item rounded-2">
-              Account Settings
-            </a>
-  
-            <div class="dropdown-divider"></div>
-  
-            <a
-              href="#"
-              class="dropdown-item rounded-2"
-              style="color: var(--bhr-accent);"
-            >
-              ⇥ &nbsp; Logout
-            </a>
-  
-          </div>
-  
-        </div>
-  
-      </div>
-  
-    </div>
-  
-  </header>
-  
-  
-  <!-- ============================================
-       PAGE CONTENT
-       ============================================ -->
-  <section class="app-content">
-  
-    <!-- Page Header -->
-    <div class="d-flex flex-column flex-md-row
-                align-items-md-center justify-content-between
-                gap-3 mb-4">
-  
-      <div>
-        <p class="eyebrow mb-1">
-          Overview
-        </p>
-  
-        <h2 class="section-title">
-          Employee Overview
-        </h2>
-      </div>
-  
-      <button class="btn btn-bhr">
-        + Add Employee
-      </button>
-  
-    </div>
-  
-  
-    <!-- Statistics -->
-    <div class="row g-3 mb-4">
-  
-      <div class="col-sm-6 col-xl-3">
-        <div class="card-bhr stat-card">
-  
-          <div class="d-flex justify-content-between">
-  
-            <div>
-              <div class="small text-muted-soft mb-2">
-                Total Employees
-              </div>
-  
-              <div class="stat-card__value">
-                248
-              </div>
-            </div>
-  
-            <div class="stat-card__icon">
-              ♙
-            </div>
-  
-          </div>
-  
-        </div>
-      </div>
-  
-  
-      <div class="col-sm-6 col-xl-3">
-        <div class="card-bhr stat-card">
-  
-          <div class="d-flex justify-content-between">
-  
-            <div>
-              <div class="small text-muted-soft mb-2">
-                Departments
-              </div>
-  
-              <div class="stat-card__value">
-                12
-              </div>
-            </div>
-  
-            <div class="stat-card__icon">
-              ▣
-            </div>
-  
-          </div>
-  
-        </div>
-      </div>
-  
-  
-      <div class="col-sm-6 col-xl-3">
-        <div class="card-bhr stat-card">
-  
-          <div class="d-flex justify-content-between">
-  
-            <div>
-              <div class="small text-muted-soft mb-2">
-                On Leave
-              </div>
-  
-              <div class="stat-card__value">
-                18
-              </div>
-            </div>
-  
-            <div class="stat-card__icon stat-card__icon--accent">
-              ◷
-            </div>
-  
-          </div>
-  
-        </div>
-      </div>
-  
-  
-      <div class="col-sm-6 col-xl-3">
-        <div class="card-bhr stat-card">
-  
-          <div class="d-flex justify-content-between">
-  
-            <div>
-              <div class="small text-muted-soft mb-2">
-                New This Month
-              </div>
-  
-              <div class="stat-card__value">
-                14
-              </div>
-            </div>
-  
-            <div class="stat-card__icon">
-              +
-            </div>
-  
-          </div>
-  
-        </div>
-      </div>
-  
-    </div>
-  
-  
-    <!-- Recent Employees -->
-    <div class="card-bhr">
-  
-      <div class="p-4 border-bottom"
-           style="border-color: var(--bhr-border) !important;">
-  
-        <div class="d-flex align-items-center justify-content-between">
-  
+
+
           <div>
-            <h3 class="section-title mb-1">
-              Recent Employees
-            </h3>
-  
-            <p class="small text-muted-soft mb-0">
-              Recently added employees to the system.
-            </p>
+
+            <h1 class="section-title">
+              Dashboard
+            </h1>
+
+            <div class="small text-muted-soft d-none d-md-block">
+              Welcome back. Here's what's happening today.
+            </div>
+
           </div>
-  
-          <a href="#" class="link-bhr small">
-            View all
-          </a>
-  
+
         </div>
-  
+
+
+        <!-- RIGHT SIDE -->
+        <!-- Keep your existing user/profile code here -->
+
       </div>
-  
-  
-      <!-- Employee Table -->
-      <div class="table-responsive">
-  
-        <table class="table align-middle mb-0">
-  
-          <thead>
-            <tr class="small text-muted-soft">
-  
-              <th class="px-4 py-3">
-                Employee
-              </th>
-  
-              <th class="py-3">
-                Department
-              </th>
-  
-              <th class="py-3">
-                Position
-              </th>
-  
-              <th class="py-3">
-                Status
-              </th>
-  
-              <th class="py-3 text-end px-4">
-                Action
-              </th>
-  
-            </tr>
-          </thead>
-  
-          <tbody>
-  
-            <tr>
-  
-              <td class="px-4">
-                <div class="d-flex align-items-center gap-2">
-  
-                  <span
-                    class="d-inline-flex align-items-center justify-content-center rounded-circle"
-                    style="
-                      width: 36px;
-                      height: 36px;
-                      background: var(--bhr-primary-lt);
-                      color: var(--bhr-primary-dk);
-                      font-size: .78rem;
-                      font-weight: 700;
-                    "
-                  >
-                    AM
-                  </span>
-  
-                  <div>
-                    <div class="fw-semibold small">
-                      Alice Muthoni
-                    </div>
-  
-                    <div class="text-muted-soft"
-                         style="font-size: .72rem;">
-                      alice@example.com
-                    </div>
-                  </div>
-  
-                </div>
-              </td>
-  
-              <td class="small">
-                Finance
-              </td>
-  
-              <td class="small">
-                Accountant
-              </td>
-  
-              <td>
-                <span
-                  class="badge rounded-pill"
-                  style="
-                    background: var(--bhr-primary-lt);
-                    color: var(--bhr-primary-dk);
-                  "
-                >
-                  Active
-                </span>
-              </td>
-  
-              <td class="text-end px-4">
-                <a href="#" class="link-bhr small">
-                  View
-                </a>
-              </td>
-  
-            </tr>
-  
-  
-            <tr>
-  
-              <td class="px-4">
-                <div class="d-flex align-items-center gap-2">
-  
-                  <span
-                    class="d-inline-flex align-items-center justify-content-center rounded-circle"
-                    style="
-                      width: 36px;
-                      height: 36px;
-                      background: var(--bhr-accent-lt);
-                      color: var(--bhr-accent);
-                      font-size: .78rem;
-                      font-weight: 700;
-                    "
-                  >
-                    JO
-                  </span>
-  
-                  <div>
-                    <div class="fw-semibold small">
-                      John Otieno
-                    </div>
-  
-                    <div class="text-muted-soft"
-                         style="font-size: .72rem;">
-                      john@example.com
-                    </div>
-                  </div>
-  
-                </div>
-              </td>
-  
-              <td class="small">
-                Technology
-              </td>
-  
-              <td class="small">
-                Software Developer
-              </td>
-  
-              <td>
-                <span
-                  class="badge rounded-pill"
-                  style="
-                    background: var(--bhr-primary-lt);
-                    color: var(--bhr-primary-dk);
-                  "
-                >
-                  Active
-                </span>
-              </td>
-  
-              <td class="text-end px-4">
-                <a href="#" class="link-bhr small">
-                  View
-                </a>
-              </td>
-  
-            </tr>
-  
-          </tbody>
-  
-        </table>
-  
-      </div>
-  
-    </div>
-  
-  </section>
-  <router-outlet></router-outlet>
-    </main>
-  
-  </div>
-  
+
+    </header>
+
+
+    <!-- PAGE CONTENT -->
+    <section class="app-content">
+
+      <router-outlet></router-outlet>
+
+    </section>
+
+  </main>
+
+</div>

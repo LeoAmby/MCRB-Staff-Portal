@@ -46,4 +46,6 @@ export class Login {
       }
     })
   }
+
+  // logOff(){}
 }

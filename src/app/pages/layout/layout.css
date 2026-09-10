@@ -1,14 +1,114 @@
-.app-sidebar {
+/* ============================================
+   SIDEBAR
+   ============================================ */
+
+   .app-sidebar {
     width: 250px;
     height: 100vh;
     min-height: 100vh;
+  
     background: var(--bhr-surface);
     border-right: 1px solid var(--bhr-border);
+  
     padding: 1.4rem 1rem;
+  
     position: sticky;
     top: 0;
-    flex: 0 0 auto;
+  
+    flex: 0 0 250px;
+  
     overflow-y: auto;
+  
     display: flex;
     flex-direction: column;
+  
+    transition:
+      width 0.25s ease,
+      flex-basis 0.25s ease,
+      padding 0.25s ease;
+  }
+  
+  
+  /* ============================================
+     COLLAPSED SIDEBAR
+     ============================================ */
+  
+  .d-flex.sidebar-collapsed .app-sidebar {
+    width: 84px;
+    min-width: 84px;
+    max-width: 84px;
+  
+    flex-basis: 84px;
+  
+    padding: 1.4rem 0.75rem;
+  
+    transition:
+      width 0.25s ease,
+      flex-basis 0.25s ease,
+      padding 0.25s ease;
+  }
+  
+  
+  /* ============================================
+     HIDE BRAND TEXT
+     ============================================ */
+  
+  .d-flex.sidebar-collapsed .brand > span:not(.brand__mark) {
+    display: none;
+  }
+  
+  
+  /* ============================================
+     CENTER BRAND
+     ============================================ */
+  
+  .d-flex.sidebar-collapsed .app-sidebar > div:first-child {
+    justify-content: center;
+  }
+  
+  
+  /* ============================================
+     HIDE NAVIGATION TEXT
+     ============================================ */
+  
+  .d-flex.sidebar-collapsed .nav-side__label {
+    display: none;
+  }
+  
+  
+  /* ============================================
+     NAVIGATION LINKS
+     ============================================ */
+  
+  .d-flex.sidebar-collapsed .nav-side__link {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  
+  /* Hide the text inside navigation links */
+  .d-flex.sidebar-collapsed .nav-side__link span:last-child {
+    display: none;
+  }
+  
+  
+  /* ============================================
+     HIDE HELP BOX
+     ============================================ */
+  
+  .d-flex.sidebar-collapsed .app-sidebar > .mt-auto {
+    display: none;
+  }
+  
+  
+  /* ============================================
+     MAIN APPLICATION
+     ============================================ */
+  
+  .app-main {
+    flex: 1 1 auto;
+    min-width: 0;
+  
+    transition: margin-left 0.25s ease;
   }
