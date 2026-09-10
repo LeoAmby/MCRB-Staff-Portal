@@ -114,11 +114,13 @@
     <header class="app-topbar">
 
       <div class="d-flex align-items-center justify-content-between">
-
-        <!-- LEFT -->
+    
+        <!-- ============================================
+             LEFT SIDE
+             ============================================ -->
         <div class="d-flex align-items-center gap-3">
-
-          <!-- SIDEBAR TOGGLE -->
+    
+          <!-- Sidebar Toggle -->
           <button
             type="button"
             class="btn btn-bhr-ghost p-2"
@@ -128,28 +130,162 @@
           >
             ☰
           </button>
-
-
+    
+          <!-- Dynamic Page Title -->
           <div>
-
-            <h1 class="section-title">
-              Dashboard
+    
+            <h1 class="section-title mb-0">
+              {{ pageTitle }}
             </h1>
-
+    
             <div class="small text-muted-soft d-none d-md-block">
-              Welcome back. Here's what's happening today.
+              {{ pageSubtitle }}
             </div>
-
+    
           </div>
-
+    
         </div>
-
-
-        <!-- RIGHT SIDE -->
-        <!-- Keep your existing user/profile code here -->
-
+    
+    
+        <!-- ============================================
+             RIGHT SIDE — USER PROFILE
+             ============================================ -->
+        <div class="d-flex align-items-center gap-3">
+    
+          <!-- Notifications -->
+          <button
+            type="button"
+            class="btn btn-bhr-ghost p-2 d-none d-sm-inline-flex"
+            aria-label="Notifications"
+            title="Notifications"
+          >
+            ♢
+          </button>
+    
+    
+          <!-- USER PROFILE -->
+          <div class="dropdown">
+    
+            <button
+              type="button"
+              class="btn btn-bhr-ghost d-flex align-items-center gap-2"
+            >
+    
+              <!-- Avatar -->
+              <span
+                class="d-inline-flex align-items-center justify-content-center rounded-circle"
+                style="
+                  width: 34px;
+                  height: 34px;
+                  background: var(--bhr-primary-lt);
+                  color: var(--bhr-primary-dk);
+                  font-weight: 700;
+                  font-size: .8rem;
+                "
+              >
+                LM
+              </span>
+    
+    
+              <!-- User Details -->
+              <span class="text-start d-none d-md-block">
+    
+                <span
+                  class="d-block fw-semibold"
+                  style="font-size: .85rem;"
+                >
+                  Leo M.
+                </span>
+    
+                <span
+                  class="d-block text-muted-soft"
+                  style="font-size: .72rem;"
+                >
+                  HR Administrator
+                </span>
+    
+              </span>
+    
+    
+              <!-- Dropdown Arrow -->
+              <span class="small d-none d-md-inline">
+                ▾
+              </span>
+    
+            </button>
+    
+    
+            <!-- ============================================
+                 USER DROPDOWN MENU
+                 ============================================ -->
+            <div
+              class="dropdown-menu dropdown-menu-end border-0 mt-2 p-2"
+              style="
+                min-width: 220px;
+                border-radius: var(--bhr-radius);
+                box-shadow: var(--bhr-shadow);
+              "
+            >
+    
+              <!-- User Information -->
+              <div
+                class="px-3 py-2 border-bottom mb-2"
+                style="border-color: var(--bhr-border) !important;"
+              >
+    
+                <div class="fw-semibold">
+                  Leo M.
+                </div>
+    
+                <div class="small text-muted-soft">
+                  leo@example.com
+                </div>
+    
+                <div class="small text-muted-soft mt-1">
+                  HR Administrator
+                </div>
+    
+              </div>
+    
+    
+              <!-- Profile -->
+              <a
+                href="#"
+                class="dropdown-item rounded-2"
+              >
+                My Profile
+              </a>
+    
+    
+              <!-- Settings -->
+              <a
+                href="#"
+                class="dropdown-item rounded-2"
+              >
+                Account Settings
+              </a>
+    
+    
+              <div class="dropdown-divider"></div>
+    
+    
+              <!-- Logout -->
+              <a
+                href="#"
+                class="dropdown-item rounded-2"
+                style="color: var(--bhr-accent);"
+              >
+                ⇥ &nbsp; Logout
+              </a>
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
       </div>
-
+    
     </header>
 
 
