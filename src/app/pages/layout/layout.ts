@@ -9,6 +9,8 @@ import {
 } from '@angular/router';
 
 import { filter } from 'rxjs';
+import { IUser } from '../../core/model/interface/User.Models';
+import { GlobalConstant } from '../../core/globalConstant/Global.constant';
 
 @Component({
   selector: 'app-layout',
@@ -32,8 +34,7 @@ export class Layout implements OnInit {
   pageTitle = 'Dashboard';
   pageSubtitle = "Welcome back. Here's what's happening today.";
 
-  loggedInUser: any = null;
-
+  loggedInUser: IUser | null = null;
 
   constructor() {
 
@@ -61,18 +62,19 @@ export class Layout implements OnInit {
 
   private loadUser(): void {
 
-    const storedUser = localStorage.getItem('emp_user');
-
+    const storedUser = localStorage.getItem(
+      GlobalConstant.LOGIN_LOCAL_KEY
+    );
+  
     if (storedUser) {
-
+  
       this.loggedInUser = JSON.parse(storedUser);
-
+  
       console.log('Logged in user:', this.loggedInUser);
-
+  
     }
-
+  
   }
-
 
   toggleSidebar(): void {
 
@@ -87,7 +89,7 @@ export class Layout implements OnInit {
 
       this.pageTitle = 'Dashboard';
       this.pageSubtitle =
-        "Welcome back. Here's what's happening today.";
+        `Welcome ${this.loggedInUser?.employeeName}.`;
 
     } else if (url.includes('/admin/employee-list')) {
 
@@ -117,4 +119,10 @@ export class Layout implements OnInit {
 
   }
 
+  logout(){
+
+    localStorage.removeItem(GlobalConstant.LOGIN_LOCAL_KEY);
+    this.router.navigate(['/login']);
+
+  }
 }

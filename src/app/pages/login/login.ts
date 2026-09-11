@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { GlobalConstant } from '../../core/globalConstant/Global.constant';
 
 @Component({
   imports: [FormsModule],
@@ -26,25 +27,68 @@ export class Login {
   constructor(private http: HttpClient) {
 
   }
-  onLogin(){
-    debugger;
-    this.http.post(environment.API_URL + 'login', this.loginObj).subscribe ({
-      next: (response:any)=>{
-        console.log('API respose:', response);
-        if (response.result){
-          alert("user found")
-          localStorage.setItem('emp_user', JSON.stringify(response.data));
-          this.router.navigateByUrl("/admin/dashboard")
+  // onLogin(){
+  //   debugger;
+  //   this.http.post(environment.API_URL + 'login', this.loginObj).subscribe ({
+  //     next: (response:any)=>{
+  //       console.log('API respose:', response);
+  //       if (response.result){
+  //         alert("user found")
+  //         localStorage.setItem(GlobalConstant.LOGIN_LOCAL_KEY, JSON.stringify(response.data));
+  //         this.router.navigateByUrl("/admin/dashboard")
 
-        }else {
+  //       }else {
+  //         alert(response.message);
+  //       }
+  //     },
+  //     error: (err:any)=>{ 
+  //       console.error('API Error:', err)
+  //       alert("API Error")
+  //     }
+  //   })
+  // }
+  onLogin(): void {
+
+    debugger;
+  
+    this.http.post(
+      environment.API_URL + 'login',
+      this.loginObj
+    ).subscribe({
+  
+      next: (response: any) => {
+  
+        console.log('API response:', response);
+  
+        if (response.result) {
+  
+          alert("user found");
+  
+          localStorage.setItem(
+            GlobalConstant.LOGIN_LOCAL_KEY,
+            JSON.stringify(response.data)
+          );
+  
+          this.router.navigateByUrl("/admin/dashboard");
+  
+        } else {
+  
           alert(response.message);
+  
         }
+  
       },
-      error: (err:any)=>{ 
-        console.error('API Error:', err)
-        alert("API Error")
+  
+      error: (err: any) => {
+  
+        console.error('API Error:', err);
+  
+        alert("API Error");
+  
       }
-    })
+  
+    });
+  
   }
 
   // logOff(){}
