@@ -1,12 +1,363 @@
 
-<div class="row align-items-center">
-    <div class="col-6"></div>
+<div class="row align-items-center mb-4">
+    <div class="col-6">
+        <div>
+            <h5 class="mb-1">Employees</h5>
+            <p class="text-muted mb-0">
+                Manage employee records and information
+            </p>
+        </div>
+    </div>
+
     <div class="col-6 text-end">
         <button type="button" class="btn btn-bhr-add">
             <span class="btn-icon">+</span>
             <span>Add New</span>
         </button>
     </div>
+</div>
+
+
+<!-- ================================
+     EMPLOYEE TABLE
+================================ -->
+
+<div class="employee-table-card">
+
+    <div class="table-responsive">
+
+        <table class="table employee-table align-middle mb-0">
+
+            <!-- TABLE HEADER -->
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Employee Name</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Department</th>
+                    <th scope="col" class="text-center">Actions</th>
+                </tr>
+            </thead>
+
+
+            <!-- TABLE BODY -->
+            <tbody>
+
+                <!-- Employee 1 -->
+                <tr>
+                    <td>
+                        <span class="employee-id">EMP-001</span>
+                    </td>
+
+                    <td>
+                        <div class="employee-info">
+                            <div class="employee-avatar">
+                                JM
+                            </div>
+
+                            <div>
+                                <div class="employee-name">
+                                    John Mwangi
+                                </div>
+
+                                <div class="employee-email">
+                                    john.mwangi@example.com
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <span class="role-text">
+                            Software Developer
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="department-badge">
+                            ICT
+                        </span>
+                    </td>
+
+                    <td>
+                        <div class="employee-actions">
+
+                            <button
+                                type="button"
+                                class="btn btn-table-edit"
+                                title="Edit Employee"
+                                aria-label="Edit Employee">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <span>Edit</span>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="btn btn-table-delete"
+                                title="Delete Employee"
+                                aria-label="Delete Employee">
+                                <i class="fa-solid fa-trash"></i>
+                                <span>Delete</span>
+                            </button>
+
+                        </div>
+                    </td>
+                </tr>
+
+
+                <!-- Employee 2 -->
+                <tr>
+                    <td>
+                        <span class="employee-id">EMP-002</span>
+                    </td>
+
+                    <td>
+                        <div class="employee-info">
+                            <div class="employee-avatar">
+                                AN
+                            </div>
+
+                            <div>
+                                <div class="employee-name">
+                                    Alice Njeri
+                                </div>
+
+                                <div class="employee-email">
+                                    alice.njeri@example.com
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <span class="role-text">
+                            HR Manager
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="department-badge">
+                            Human Resources
+                        </span>
+                    </td>
+
+                    <td>
+                        <div class="employee-actions">
+
+                            <button
+                                type="button"
+                                class="btn btn-table-edit"
+                                title="Edit Employee"
+                                aria-label="Edit Employee">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <span>Edit</span>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="btn btn-table-delete"
+                                title="Delete Employee"
+                                aria-label="Delete Employee">
+                                <i class="fa-solid fa-trash"></i>
+                                <span>Delete</span>
+                            </button>
+
+                        </div>
+                    </td>
+                </tr>
+
+
+                <!-- Employee 3 -->
+                <tr>
+                    <td>
+                        <span class="employee-id">EMP-003</span>
+                    </td>
+
+                    <td>
+                        <div class="employee-info">
+                            <div class="employee-avatar">
+                                DK
+                            </div>
+
+                            <div>
+                                <div class="employee-name">
+                                    David Kamau
+                                </div>
+
+                                <div class="employee-email">
+                                    david.kamau@example.com
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <span class="role-text">
+                            Finance Officer
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="department-badge">
+                            Finance
+                        </span>
+                    </td>
+
+                    <td>
+                        <div class="employee-actions">
+
+                            <button
+                                type="button"
+                                class="btn btn-table-edit"
+                                title="Edit Employee"
+                                aria-label="Edit Employee">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <span>Edit</span>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="btn btn-table-delete"
+                                title="Delete Employee"
+                                aria-label="Delete Employee">
+                                <i class="fa-solid fa-trash"></i>
+                                <span>Delete</span>
+                            </button>
+
+                        </div>
+                    </td>
+                </tr>
+
+
+                <!-- Employee 4 -->
+                <tr>
+                    <td>
+                        <span class="employee-id">EMP-004</span>
+                    </td>
+
+                    <td>
+                        <div class="employee-info">
+                            <div class="employee-avatar">
+                                SW
+                            </div>
+
+                            <div>
+                                <div class="employee-name">
+                                    Sarah Wanjiku
+                                </div>
+
+                                <div class="employee-email">
+                                    sarah.wanjiku@example.com
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <span class="role-text">
+                            Operations Officer
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="department-badge">
+                            Operations
+                        </span>
+                    </td>
+
+                    <td>
+                        <div class="employee-actions">
+
+                            <button
+                                type="button"
+                                class="btn btn-table-edit"
+                                title="Edit Employee"
+                                aria-label="Edit Employee">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <span>Edit</span>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="btn btn-table-delete"
+                                title="Delete Employee"
+                                aria-label="Delete Employee">
+                                <i class="fa-solid fa-trash"></i>
+                                <span>Delete</span>
+                            </button>
+
+                        </div>
+                    </td>
+                </tr>
+
+
+                <!-- Employee 5 -->
+                <tr>
+                    <td>
+                        <span class="employee-id">EMP-005</span>
+                    </td>
+
+                    <td>
+                        <div class="employee-info">
+                            <div class="employee-avatar">
+                                PO
+                            </div>
+
+                            <div>
+                                <div class="employee-name">
+                                    Peter Otieno
+                                </div>
+
+                                <div class="employee-email">
+                                    peter.otieno@example.com
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <span class="role-text">
+                            Customer Experience Officer
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="department-badge">
+                            Customer Experience
+                        </span>
+                    </td>
+
+                    <td>
+                        <div class="employee-actions">
+
+                            <button
+                                type="button"
+                                class="btn btn-table-edit"
+                                title="Edit Employee"
+                                aria-label="Edit Employee">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <span>Edit</span>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="btn btn-table-delete"
+                                title="Delete Employee"
+                                aria-label="Delete Employee">
+                                <i class="fa-solid fa-trash"></i>
+                                <span>Delete</span>
+                            </button>
+
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
 </div>
 
 
