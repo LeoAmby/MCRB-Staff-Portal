@@ -1,1 +1,359 @@
 <p>employee-form works!</p>
+<div class="new-employee-page">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header mb-4">
+        <div>
+            <h4 class="page-title">Add New Employee</h4>
+            <p class="page-subtitle">
+                Create a new employee record and assign their department and role.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- FORM CARD -->
+    <div class="employee-form-card">
+
+        <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+
+            <!-- ==========================================
+                 BASIC INFORMATION
+            =========================================== -->
+
+            <div class="form-section">
+
+                <div class="form-section-header">
+                    <div class="section-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+                        <h6>Basic Information</h6>
+                        <p>Enter the employee's personal details.</p>
+                    </div>
+                </div>
+
+
+                <div class="row g-4">
+
+                    <!-- Employee ID -->
+                    <div class="col-md-6">
+
+                        <label for="employeeId" class="form-label">
+                            Employee ID
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="number"
+                            id="employeeId"
+                            class="form-control bhr-input"
+                            formControlName="employeeId"
+                            placeholder="Enter employee ID"
+                        />
+
+                    </div>
+
+
+                    <!-- Employee Name -->
+                    <div class="col-md-6">
+
+                        <label for="employeeName" class="form-label">
+                            Employee Name
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="employeeName"
+                            class="form-control bhr-input"
+                            formControlName="employeeName"
+                            placeholder="Enter full name"
+                        />
+
+                    </div>
+
+
+                    <!-- Contact -->
+                    <div class="col-md-6">
+
+                        <label for="contactNo" class="form-label">
+                            Contact Number
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="contactNo"
+                            class="form-control bhr-input"
+                            formControlName="contactNo"
+                            placeholder="e.g. 0712345678"
+                        />
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="col-md-6">
+
+                        <label for="emailId" class="form-label">
+                            Email Address
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="emailId"
+                            class="form-control bhr-input"
+                            formControlName="emailId"
+                            placeholder="employee@example.com"
+                        />
+
+                    </div>
+
+
+                    <!-- Gender -->
+                    <div class="col-md-6">
+
+                        <label for="gender" class="form-label">
+                            Gender
+                            <span class="required">*</span>
+                        </label>
+
+                        <select
+                            id="gender"
+                            class="form-select bhr-input"
+                            formControlName="gender">
+
+                            <option value="" disabled>
+                                Select gender
+                            </option>
+
+                            <option value="Male">
+                                Male
+                            </option>
+
+                            <option value="Female">
+                                Female
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Role -->
+                    <div class="col-md-6">
+
+                        <label for="role" class="form-label">
+                            Role
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="role"
+                            class="form-control bhr-input"
+                            formControlName="role"
+                            placeholder="e.g. Software Developer"
+                        />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 ORGANISATIONAL INFORMATION
+            =========================================== -->
+
+            <div class="form-section">
+
+                <div class="form-section-header">
+
+                    <div class="section-icon">
+                        <i class="fa-solid fa-sitemap"></i>
+                    </div>
+
+                    <div>
+                        <h6>Organisational Assignment</h6>
+
+                        <p>
+                            Assign the employee to the appropriate department.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="row g-4">
+
+                    <!-- Parent Department -->
+                    <div class="col-md-6">
+
+                        <label
+                            for="parentDepartment"
+                            class="form-label">
+
+                            Parent Department
+
+                            <span class="required">*</span>
+
+                        </label>
+
+                        <select
+                            id="parentDepartment"
+                            class="form-select bhr-input"
+                            formControlName="parentDepartment"
+                            (change)="onParentDepartmentChange()">
+
+                            <option value="" disabled>
+                                Select parent department
+                            </option>
+
+                            <option
+                                *ngFor="let department of parentDepartments"
+                                [value]="department.id">
+
+                                {{ department.name }}
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Child Department -->
+                    <div class="col-md-6">
+
+                        <label
+                            for="childDepartment"
+                            class="form-label">
+
+                            Child Department
+
+                            <span class="required">*</span>
+
+                        </label>
+
+                        <select
+                            id="childDepartment"
+                            class="form-select bhr-input"
+                            formControlName="childDepartment"
+                            [disabled]="!employeeForm.get('parentDepartment')?.value">
+
+                            <option value="" disabled>
+                                Select child department
+                            </option>
+
+                            <option
+                                *ngFor="let department of childDepartments"
+                                [value]="department.id">
+
+                                {{ department.name }}
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 LOGIN INFORMATION
+            =========================================== -->
+
+            <div class="form-section">
+
+                <div class="form-section-header">
+
+                    <div class="section-icon">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+
+                    <div>
+                        <h6>Login Information</h6>
+
+                        <p>
+                            Set the employee's initial portal password.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="row g-4">
+
+                    <!-- Password -->
+                    <div class="col-md-6">
+
+                        <label
+                            for="password"
+                            class="form-label">
+
+                            Password
+
+                            <span class="required">*</span>
+
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            class="form-control bhr-input"
+                            formControlName="password"
+                            placeholder="Enter temporary password"
+                        />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 FORM ACTIONS
+            =========================================== -->
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-bhr-cancel">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-bhr-save"
+                    [disabled]="employeeForm.invalid">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    <span>Save Employee</span>
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

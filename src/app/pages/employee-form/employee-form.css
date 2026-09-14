@@ -1,0 +1,382 @@
+/* =========================================================
+   NEW EMPLOYEE PAGE
+========================================================= */
+
+.new-employee-page {
+    width: 100%;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-title {
+    margin: 0;
+
+    color: var(--bhr-ink);
+
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.page-subtitle {
+    margin: 5px 0 0;
+
+    color: var(--bhr-muted);
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.employee-form-card {
+
+    background: var(--bhr-surface);
+
+    border: 1px solid var(--bhr-border);
+
+    border-radius: var(--bhr-radius);
+
+    box-shadow: var(--bhr-shadow);
+
+    padding: 28px;
+}
+
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.form-section {
+
+    padding-bottom: 28px;
+
+    margin-bottom: 28px;
+
+    border-bottom: 1px solid var(--bhr-border);
+}
+
+.form-section:last-of-type {
+
+    margin-bottom: 0;
+
+    padding-bottom: 0;
+
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.form-section-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+}
+
+.section-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: var(--bhr-primary-lt);
+
+    color: var(--bhr-primary);
+
+    font-size: 0.9rem;
+}
+
+.form-section-header h6 {
+
+    margin: 0;
+
+    color: var(--bhr-ink);
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+}
+
+.form-section-header p {
+
+    margin: 3px 0 0;
+
+    color: var(--bhr-muted);
+
+    font-size: 0.72rem;
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.form-label {
+
+    margin-bottom: 7px;
+
+    color: var(--bhr-ink);
+
+    font-size: 0.76rem;
+
+    font-weight: 600;
+}
+
+.required {
+
+    margin-left: 2px;
+
+    color: var(--bhr-accent);
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.bhr-input {
+
+    min-height: 44px;
+
+    border: 1px solid var(--bhr-border);
+
+    border-radius: 9px;
+
+    background: #fff;
+
+    color: var(--bhr-ink);
+
+    font-size: 0.82rem;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.bhr-input::placeholder {
+
+    color: #A7B0AF;
+}
+
+
+.bhr-input:hover {
+
+    border-color: #D7CEC3;
+}
+
+
+.bhr-input:focus {
+
+    border-color: var(--bhr-primary);
+
+    background: var(--bhr-surface);
+
+    color: var(--bhr-ink);
+
+    box-shadow:
+        0 0 0 3px var(--bhr-primary-lt);
+
+    outline: none;
+}
+
+
+/* Select arrow area */
+
+select.bhr-input {
+
+    cursor: pointer;
+}
+
+
+/* Disabled child department */
+
+select.bhr-input:disabled {
+
+    background: var(--bhr-sand);
+
+    color: var(--bhr-muted);
+
+    cursor: not-allowed;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.form-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 28px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid var(--bhr-border);
+}
+
+
+/* Cancel */
+
+.btn-bhr-cancel {
+
+    min-width: 95px;
+
+    padding: 9px 16px;
+
+    border: 1px solid var(--bhr-border);
+
+    border-radius: 9px;
+
+    background: var(--bhr-surface);
+
+    color: var(--bhr-ink);
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+}
+
+.btn-bhr-cancel:hover {
+
+    background: var(--bhr-sand);
+
+    border-color: #D8CEC3;
+}
+
+
+/* Save */
+
+.btn-bhr-save {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: 145px;
+
+    padding: 9px 16px;
+
+    border: 1px solid var(--bhr-primary);
+
+    border-radius: 9px;
+
+    background: var(--bhr-primary);
+
+    color: var(--bhr-surface);
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 3px 8px rgba(47, 111, 107, 0.15);
+
+    transition: all 0.2s ease;
+}
+
+.btn-bhr-save:hover:not(:disabled) {
+
+    background: var(--bhr-primary-dk);
+
+    border-color: var(--bhr-primary-dk);
+
+    color: var(--bhr-surface);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 14px rgba(47, 111, 107, 0.2);
+}
+
+.btn-bhr-save:disabled {
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .employee-form-card {
+
+        padding: 20px;
+
+        border-radius: 12px;
+    }
+
+    .form-section {
+
+        padding-bottom: 22px;
+
+        margin-bottom: 22px;
+    }
+
+    .form-section-header {
+
+        margin-bottom: 18px;
+    }
+
+    .form-actions {
+
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+    .btn-bhr-cancel,
+    .btn-bhr-save {
+
+        width: 100%;
+    }
+
+}
