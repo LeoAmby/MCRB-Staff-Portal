@@ -89,7 +89,7 @@ export class Layout implements OnInit {
 
       this.pageTitle = 'Dashboard';
       this.pageSubtitle =
-        `Welcome ${this.loggedInUser?.employeeName}.`;
+        `Welcome!`;
 
     } else if (url.includes('/admin/employee-list')) {
 
