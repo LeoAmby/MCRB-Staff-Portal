@@ -54,7 +54,7 @@
   
   .btn-bhr-add:hover .btn-icon {
     background: rgb(238, 215, 81);
-    transform: rotate(180deg);
+    transform: rotate(90deg);
   }
   
   .btn-bhr-add:active {
@@ -66,7 +66,7 @@
     outline-offset: 2px;
   }
 
-  /* ========================================
+/* ========================================
    EMPLOYEE TABLE CARD
 ======================================== */
 
