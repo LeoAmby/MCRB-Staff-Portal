@@ -5,6 +5,7 @@ import {
     ReactiveFormsModule,
     Validators
 } from '@angular/forms';
+import { EmployeeModel } from '../../core/model/classes/employee.model';
 
 @Component({
   imports: [ReactiveFormsModule],
@@ -14,6 +15,7 @@ import {
 })
 export class EmployeeForm {
 
+  employeeObj: EmployeeModel = new EmployeeModel();
   employeeForm: FormGroup;
 
   parentDepartments = [
